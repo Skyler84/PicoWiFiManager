@@ -41,6 +41,7 @@ jobs:
         cmakeListsTxtPath: ${{github.workspace}}/main/CMakeLists.txt
         configurePreset: default
         configurePresetAdditionalArgs: "['-DCMAKE_C_COMPILER_LAUNCHER=ccache', '-DCMAKE_CXX_COMPILER_LAUNCHER=ccache']"
+        buildPreset: default
     - name: Upload App
       uses: actions/upload-artifact@v3
       with:
