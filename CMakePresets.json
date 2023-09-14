@@ -8,11 +8,10 @@
       "cacheVariables": {
         "PICO_SDK_FETCH_FROM_GIT": "ON",
         "PIMORONI_PICO_FETCH_FROM_GIT": "ON",
-        "CMAKE_C_COMPILER_LAUNCHER": "ccache",
-        "CMAKE_CXX_COMPILER_LAUNCHER": "ccache",
         "PICO_BOARD": "pico_w",
         "CMAKE_C_COMPILER": "arm-none-eabi-gcc",
         "CMAKE_CXX_COMPILER": "arm-none-eabi-g++",
+        "CMAKE_ASM_COMPILER": "arm-none-eabi-as",
         "CMAKE_C_COMPILER_FORCED": "TRUE",
         "CMAKE_CXX_COMPILER_FORCED": "TRUE",
         "CMAKE_C_FLAGS": "-mthumb -mcpu=cortex-m0plus -mfloat-abi=soft -mabi=aapcs",
