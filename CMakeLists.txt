@@ -39,7 +39,9 @@ add_library(pico_wifi_manager STATIC
 )
 
 add_library(pico_wifi_manager_gui STATIC
-    src/pico_wifi_manager_gui.cpp
+    src/gui/manager_view.cpp
+    src/gui/scan_view.cpp
+    src/gui/network_info_view.cpp
 )
 
 add_executable(pico_wifi_manager_app
