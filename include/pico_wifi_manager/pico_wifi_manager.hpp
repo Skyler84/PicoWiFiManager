@@ -63,6 +63,8 @@ namespace WM{
       WifiManager();
       ~WifiManager();
 
+      void init();
+
       void poll();
       int getTcpLinkStatus();
       int getWifiLinkStatus();

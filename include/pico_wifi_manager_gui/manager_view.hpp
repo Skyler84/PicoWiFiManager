@@ -1,8 +1,10 @@
 #include "gui/view.hpp"
-#include "pico_wifi_manager.hpp"
 #include "gui/widgets/text_widget.hpp"
 #include "gui/widgets/divider_widget.hpp"
 #include "gui/widgets/list_widget.hpp"
+
+#include "pico_wifi_manager_gui/scan_view.hpp"
+#include "pico_wifi_manager_gui/network_info_view.hpp"
 
 namespace WM
 {
@@ -22,6 +24,11 @@ namespace WM
       gui::VDividerWidget div;
       gui::TextWidget header;
       gui::ListWidget list;
+      gui::TextWidget li_status, li_scan;
     } ui;
+    ScanView m_scanview;
+
+    void selectApplication(size_t idx);
+
   };
 } // namespace WM

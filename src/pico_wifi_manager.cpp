@@ -1,4 +1,4 @@
-#include "pico_wifi_manager.hpp"
+#include "pico_wifi_manager/pico_wifi_manager.hpp"
 
 #include "pico/stdlib.h"
 
@@ -35,12 +35,16 @@ static const char* cyw43_tcpip_link_status_name(int status)
 }
 
 WifiManager::WifiManager(){
-  m_linkStatus = CYW43_LINK_UP + 1;
-  cyw43_arch_init();
-  cyw43_arch_enable_sta_mode();
 }
 
 WifiManager::~WifiManager(){}
+
+void WifiManager::init()
+{
+  m_linkStatus = CYW43_LINK_UP+1;
+  cyw43_arch_init();
+  cyw43_arch_enable_sta_mode();
+}
 
 void WifiManager::addNetwork(const char *ssid, const uint8_t *bssid, const char *passwd, uint32_t auth){
   KnownNetwork *n = new KnownNetwork;
@@ -85,7 +89,7 @@ void WifiManager::poll(){
 
   }
 
-  if(m_linkStatus == TcpLinkStatus::NONET 
+  if(m_linkStatus == TcpLinkStatus::NONET
   || m_linkStatus == TcpLinkStatus::DOWN
   || m_linkStatus == TcpLinkStatus::FAIL){
     selectNextNetwork();
